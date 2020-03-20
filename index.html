@@ -170,6 +170,26 @@ img {
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
 }
+			@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	html{
+		padding: 0px;
+	}
+	h1{
+	padding:0;
+	padding-top:0;
+	margin:0;
+	border: 15px gold solid;
+	background-position: center right;
+	height:200px;
+}
+	}	
+	img{
+		position: relative;
+		animation: none;
+		width: 190px;
+	}
+}
 		</style>
 	</head>
 
@@ -291,7 +311,7 @@ img {
 		<button>Donate</button> -->
 		<p>Copyright &copy; 2019, World Destiny</p>
 	</div>
-	<script src="PB&J.js">
+	<script>
 		const myList = [
     {
         id: 1,
