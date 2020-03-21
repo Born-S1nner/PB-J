@@ -159,14 +159,14 @@
 			animation-iteration-count: infinite;
 		}
 			@media only screen and (min-width: 768px){
-		img {
+		[img*] {
 			position: relative;
 			animation-name: move;
 			animation-duration: 10s;
 			animation-direction: reverse; 
 			animation-iteration-count: infinite; 
 			  }
-		@keyframes move {
+		[@keyframes move*] {
 			0%   { left:0px; top:0px;}
 			50%  { left:300px; top:0px;}
 			100% { left:0px; top:0px;}
