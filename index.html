@@ -22,7 +22,6 @@
 			border: 15px gold solid;
 			background-position: center right;
 			height:200px;
-			width:100%;
 			}
 		h1{
 			background-image: url(https://i.ytimg.com/vi/Mf5K9XPBOz8/maxresdefault.jpg);
@@ -31,7 +30,6 @@
 			}
 		
 		#headline{
-			width:100%;
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -51,12 +49,10 @@
 			100% {color: red;}
 			}
 		#navbar{
-			width:100%;
 			background-color:blue;
 			padding: 10px 5px;
 			}
 		#headline{
-			width:100%;
 			padding:10px;
 			color:rgb(182, 35, 116);
 			margin:20px;
@@ -64,7 +60,6 @@
 			background-image: url(https://i.ytimg.com/vi/YMjWNOnkmJ0/maxresdefault.jpg);
 			}
 		#item2 {
-			width:100%;
 			background-color: black;
 			color:yellow;
 			padding:10px;
@@ -83,9 +78,6 @@
 			font-family: Tahoma, Geneva, sans-serif ;
 			margin: 0px;
 			}
-		
-
-		
 		.wavecheck{
 			position: relative;
 			animation-name: move;
@@ -93,7 +85,6 @@
 			animation-direction: reverse; 
 			animation-iteration-count: infinite; 
 			}
-		
 		.flex-container {
 			padding-bottom: 2em;
 			display: flex;
@@ -101,7 +92,6 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: space-around;
-		
 			  }
 		
 			/* Button used to open the contact form - fixed at the bottom of the page */
@@ -117,7 +107,6 @@
 			border: none;
 			cursor: pointer;
 			 }
-		
 			  /* The popup form - hidden by default */
 		  .popup {
 			display: none;
@@ -150,7 +139,6 @@
 		
 		
 		#item5{
-			width:100%;
 			position:relative;
 			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrw6b8Vtt5GU8RkgZCtM3IwsoRC9qcpDYW9LtF4GML0RWpZNfN);
 			border:5px red solid;
@@ -164,6 +152,11 @@
 			animation-duration: 4s;
 			animation-iteration-count: infinite;
 		}
+			@media only screen and (max-width: 600px) {
+			  body {
+			    background-color: lightblue;
+			  }
+			}
 			@media only screen and (min-width: 768px){
 		[img*] {
 			position: relative;
