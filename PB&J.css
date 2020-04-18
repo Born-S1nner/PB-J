@@ -54,6 +54,9 @@ h1{
 	display: block;
 }
 
+.panel {
+	display: none;
+}
 
 .panel .active {
 	display: block;
