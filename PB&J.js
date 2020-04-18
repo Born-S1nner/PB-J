@@ -8,10 +8,10 @@ $(function () {
 //panel itself
         var panelToShow = $(this).attr('rel');
 
-        $box.find('.panel,active').slideUp(300, showPanel);
+        $box.find('.panel.active').slideUp(300, showPanel);
 
         function showPanel() {
-            $(this).removeClass('.active');
+            $(this).removeClass('active');
 
             $('#'+panelToShow).slideDown(300, function() {
                 $(this).addClass('active')
