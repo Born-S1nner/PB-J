@@ -1,28 +1,28 @@
 $(function () {
-//whole
+
     $(".section li").on('click', function() {
         var $box = $(this).closest('.view-panel')
-//li system
+
         $box.find(".section li.active").removeClass('active')
         $(this).addClass('active');
-//panel itself
+//what is shown
         var panelToShow = $(this).attr('rel');
 
-        $box.find('.panel.active').slideUp(300, showPanel);
+        $box.find('.panel.active').slideUp(300, showNextPanel);
 
-        function showPanel() {
+        function showNextPanel() {
             $(this).removeClass('active');
 
             $('#'+panelToShow).slideDown(300, function() {
-                $(this).addClass('active')
+                $(this).addClass('active');
             });
-        };
+        }
 
     });
 });
 
 $(function () {
     $('li').on('click', function() {
-        $('.context-active').hide()
+        $('.context').hide()
     })
 });
