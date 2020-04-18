@@ -47,10 +47,6 @@ h1{
 }
 
 .context {
-	display:none;
-}
-
-.context .active {
 	display: block;
 }
 
