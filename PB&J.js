@@ -58,7 +58,8 @@ $(function() {
         clearInterval(interval);
     }
 
-    $slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
+     $slider.on('mouseenter', 'touchstart', stopSlider).on('mouseleave', 'touchend', startSlider);
+
 
     startSlider();
     //listen to mouseEnter and pause
