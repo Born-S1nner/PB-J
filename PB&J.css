@@ -129,6 +129,8 @@ a{
 	width: 50%;
 	height: 42px;
 	border-radius: 25%;
+	background-color: grey;
+	color: black;
 }
 .proActive{
 	background: green;
