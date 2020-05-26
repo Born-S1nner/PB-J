@@ -3,23 +3,16 @@ body{
 	background-color: purple;
 	margin: 0;	
 }
-
-.item1 {
-	padding: 0;
-}
-
-h1{
+#item1 {
+	border: 8px gold solid;
 	background-image: url(https://i.ytimg.com/vi/Mf5K9XPBOz8/maxresdefault.jpg);
 	background-position: center; 
 	background-repeat: no-repeat;	
+	background-size: cover;
 	font-family: Tahoma, Geneva, sans-serif ;
-	border: 8px gold solid;
 	color:yellow;	
 }
-
 #headline{
-	padding:10px;
-	margin:20px;
 	font-size: 30px;
 	background-image: url(https://i.ytimg.com/vi/YMjWNOnkmJ0/maxresdefault.jpg);	
 	background-position: center;
@@ -29,74 +22,119 @@ h1{
 	animation-duration: 9s;
 	animation-iteration-count: infinite;
 }
-
-@keyframes line{
-	0%   {color: red;}
-	25%  {color: yellow;}
-	37.5%  {color: green;}
-	50%  {color: blue;}
-	62.5%  {color: purple;}
-	75%  {color: pink;}
-	100% {color: red;}
-}
-
 #item2 {
 	background-color: black;
 	color:yellow;
 	padding:10px;
 }
-
 .context {
 	display:block;
 }
-
 .panel {
 	display: none;
 }
-
 .panel .active {
 	display: block;
 }
-
 .section {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 }
-
 .section > li {
 	list-style-type: none;
-	width: 45%;
+	width: 100%;
 	padding: 2px;
+	margin: 1px;
 	border: 2px purple solid;
 	align-content: space-between;
 	
 }
-
 .section li.active {
 	background: yellow;
 	color: black;
 }
-
-ol{
-	list-style: upper-roman;
-}
-
 img {
 	position: relative;
 	width: 100%;
 }
-
 a{
 	text-decoration: none;
 	color:green;
 }
-
  a:hover{
 	color:white;
 	font-family: impact, charcoal, sans-serif;
 }
-
+.videoG {
+	color: white;
+}
+.gamer{
+	background-color: ivory;
+	width: 100%;
+	height: 250px;
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 900;	
+}
+.animation{
+	animation-name: showSetting;
+	animation-duration: 12s;
+	animation-iteration-count: 1;
+}
+@keyframes showSetting{
+	0% {color: white; background-color: black;}
+	90%{color: black; background-color: white;}
+	100% {color: white; background-color: black;}
+}
+.gameBlock {
+	display: none;
+	background-color: blue;
+	position: absolute;
+}
+.endGoal{
+	display: none;	
+	right: 0;
+	bottom: 0;
+	background-color: red;
+	position: absolute;
+}
+.blockOne {
+	position: absolute;
+	animation-name: oneblock;
+	animation-duration: 12s;
+	animation-iteration-count: 1;
+}
+.blockTwo {
+	position: absolute;
+	animation-name: twoblock;
+	animation-duration: 12s;
+	animation-iteration-count: 1;
+}
+@keyframes oneblock{
+	0% {background-color: blue; width: 30px; height: 30px; }
+	50% {background: rgba(255, 0, 0, 0.199);}
+	80% {background: red; width: 100%; height: 50px;}
+	100% {background: white; width: 100%; height: 100%;}
+}
+@keyframes twoblock{
+	0% {background-color: red; 	width: 45px;
+	height: 45px;}
+	50% {background: rgba(0, 0, 255, 0.199);}
+	80% {background: blue; width: 100%; height: 70px;}
+	100% {background: white; width: 100%; height: 100%;}
+}
+.buttoner{
+	width: 50%;
+	height: 42px;
+	border-radius: 25%;
+}
+.proActive{
+	background: green;
+	border: 0px;
+	font-weight: 900;
+}
 .wavecheck{
 	position: relative;
 	animation-name: move;
@@ -104,47 +142,6 @@ a{
 	animation-direction: reverse; 
 	animation-iteration-count: infinite; 
 }
-
-#flex-slider {
-	width: 720px;
-	height: 400px;	
-	overflow: hidden;
-}
-
-
-#flex-slider .slides {
-	display: block;
-	width: 6000px;
-	height: 400px;
-	margin: 0;
-	padding: 0;
-}
-
-#flex-slider .slide {
-	float: left;
-	list-style-type: none;
-	width: 720px;
-	height: 400px;
-}
-
-
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-	text-align: center;
-	padding: 5px;
-	background-color: rgb(183, 0, 255);
-	margin: 10px;
-	padding: 20px;
-	font-size: 30px;
-	color: yellow;
-	padding: 16px;
-	border: none;
-	cursor: pointer;
-  }
-
-
-
 #item3{
 	position:relative;
 	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQrw6b8Vtt5GU8RkgZCtM3IwsoRC9qcpDYW9LtF4GML0RWpZNfN);
@@ -158,4 +155,13 @@ a{
 	animation-name: line;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
+}
+@keyframes line{
+	0%   {color: red;}
+	25%  {color: yellow;}
+	37.5%  {color: green;}
+	50%  {color: blue;}
+	62.5%  {color: purple;}
+	75%  {color: pink;}
+	100% {color: red;}
 }
