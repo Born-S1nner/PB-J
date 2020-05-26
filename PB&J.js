@@ -1,67 +1,49 @@
 $(function () {
-
     $(".section li").on('click', function() {
-        var $box = $(this).closest('.view-panel')
+        let $box = $(this).closest('.view-panel');
+        let panelToShow = $(this).attr('rel');
+        let $jotaro = $box.find(".section li.active");
+        let $dio =  $box.find('.panel.active')
+        const $lily = $('.context');
 
-        $box.find(".section li.active").removeClass('active')
+        $jotaro.removeClass('active')
         $(this).addClass('active');
-//what is shown
-        var panelToShow = $(this).attr('rel');
 
-        $box.find('.panel.active').slideUp(300, showNextPanel);
+        $dio.slideUp(300, showNextPanel);
 
         function showNextPanel() {
+            $lily.hide()            
             $(this).removeClass('active');
-
-            $('#'+panelToShow).slideDown(300, function() {
-                $(this).addClass('active');
-            });
+            $('#'+panelToShow).slideDown(300, activate);
         }
-
+        function activate() {
+                $(this).addClass('active');
+        }
     });
-});
+    let game = {
+        init: function () {
+            this.cacheDom();
+            this.bindEvents();
+        },
+        cacheDom: function() {
+            this.$myGameBoard = $('.videoG');
+            this.$gameScreen = this.$myGameBoard.find('.gamer');
+            this.$myGamePieceOne = this.$gameScreen.find('.gameBlock');
+            this.$myGamePieceTwo = this.$gameScreen.find('.endGoal');
+            this.$down = this.$myGameBoard.find("#downwards");
 
-$(function () {
-    $('li').on('click', function() {
-        $('.context').hide()
-    })
-});
-
-$(function() {
-
-    //configuration
-    let width = 720;
-    let animationSpeed = 1000;
-    let pause = 3000;
-    let currentSlide = 1;
-
-    //cache DOM
-    let $slider = $('#flex-slider');
-    let $slideContainer = $slider.find('.slides');
-    let $slides = $slideContainer.find('.slide');
-
-    let interval;
-
-    function startSlider(){
-        interval = setInterval(function() {
-            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
-                currentSlide++;
-                if(currentSlide === $slides.length) {
-                    currentSlide = 1;
-                    $slideContainer.css('margin-left', 0);
-                }
-            });
-        }, pause);
+        },
+        bindEvents: function () {
+            this.$down.on('click', this.moveDown.bind(this))
+        },
+        moveDown() {
+            this.$myGamePieceOne.show()
+            this.$myGamePieceTwo.show()
+            this.$gameScreen.toggleClass('animation');
+            this.$down.toggleClass('proActive');
+            this.$myGamePieceOne.toggleClass('blockOne');
+            this.$myGamePieceTwo.toggleClass('blockTwo')
+        }
     }
-
-    function stopSlider() {
-        clearInterval(interval);
-    }
-
-     $slider.on('mouseenter', 'touchstart', stopSlider).on('mouseleave', 'touchend', startSlider);
-
-
-    startSlider();
-    //listen to mouseEnter and pause
-    //resume at mouse leave
-});
+    game.init()    
+}() );
