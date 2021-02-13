@@ -45,5 +45,10 @@ $(function () {
             this.$myGamePieceTwo.toggleClass('blockTwo')
         }
     }
-    game.init()    
+    game.init()
+    fetch('headline.txt')
+        .then(res => res.text())
+        .then(textString => {
+            console.log(textString)
+        })
 }() );
