@@ -2,7 +2,10 @@ import React from "react"
 class Calculator extends React.Component {
   constructor(props) {
     super(props)
+    
     this.numbers = this.numbers.bind(this)
+    this.oper = this.oper.bind(this)
+
     this.state = {
       first_input: 0,
       second_input: 0
@@ -11,9 +14,17 @@ class Calculator extends React.Component {
   numbers(e) {
     console.log(e.currentTarget.value)
   }
-  renderInput() {
+  oper(e) {
+    console.log(e.currentTarget.value)
+  }
+  renderInput(name, value) {
     return(
-      <input/>
+      <input 
+        type="number" 
+        name={name} 
+        value={value}
+
+      />
     )
   }
 
@@ -21,8 +32,8 @@ class Calculator extends React.Component {
     return (
       <div>
         <h3>Hello from React gang</h3>
-        {this.renderInput()}
-        {this.renderInput()}
+        {this.renderInput('first_input', this.state.first_input)}
+        {this.renderInput('second_input', this.state.second_input)}
         <table className="table">
           <tr>
             <Buttons display='7' value={7} click={this.numbers} />
