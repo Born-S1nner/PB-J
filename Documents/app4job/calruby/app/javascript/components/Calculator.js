@@ -5,6 +5,8 @@ class Calculator extends React.Component {
     
     this.numbers = this.numbers.bind(this)
     this.oper = this.oper.bind(this)
+    
+    this.onChangeInput = this.onChangeInput.bind(this)
 
     this.state = {
       first_input: 0,
@@ -12,18 +14,35 @@ class Calculator extends React.Component {
     }
   }
   numbers(e) {
-    console.log(e.currentTarget.value)
+    if (this.state.first_input===0) {
+      var num = e.currentTarget.value
+      this.setState({
+        first_input: num
+      })
+    } else {
+      var num = this.state.first_input+e.currentTarget.value
+      this.setState({
+        first_input: num
+      })
+    }
   }
   oper(e) {
     console.log(e.currentTarget.value)
   }
+
+  onChangeInput(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
   renderInput(name, value) {
     return(
       <input 
         type="number" 
         name={name} 
         value={value}
-
+        onChange={this.onChangeInput}
       />
     )
   }
@@ -31,7 +50,6 @@ class Calculator extends React.Component {
   render () {
     return (
       <div>
-        <h3>Hello from React gang</h3>
         {this.renderInput('first_input', this.state.first_input)}
         {this.renderInput('second_input', this.state.second_input)}
         <table className="table">
